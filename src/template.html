@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+  </head>
+  <body>
+    <aside class="aside">
+      <div class="default-project">
+        <div class="inbox project-item">Inbox</div>
+        <div class="today-filter project-item">Today</div>
+      </div>
+      <div class="add-proj-container">
+        <button class="add-project-but">Add Project</button>
+        <input
+          type="text"
+          placeholder="Press enter to add"
+          class="project-input"
+        />
+      </div>
+      <div class="project-cont"></div>
+    </aside>
+
+    <header>
+      <h1>Inbox</h1>
+      <div class="quick-add-cont">
+        <button class="add-but">+</button>
+        <input
+          type="text"
+          id="add-quick"
+          placeholder="Press Enter to quick add"
+        />
+      </div>
+    </header>
+    <main class="main">
+      <div class="todo-disp-cont">
+        <div class="todo-item">
+          <div class="todo-name-cont">
+            <input type="checkbox" />
+            <p>git gud</p>
+          </div>
+          <div class="options-cont">edit</div>
+        </div>
+        <div class="todo-item">skill issue</div>
+      </div>
+      <div class="done-todo-section">
+        <button class="show-done">Show completed tasks ▼</button>
+        <div class="done-disp-cont">
+          <div class="done-todo-item">skill issue intensified</div>
+        </div>
+      </div>
+      <!-- <button class="logger">log todo</button> -->
+    </main>
+    <dialog>
+      <form action="" method="dialog">
+        <button
+          type="submit"
+          disabled
+          style="display: none"
+          aria-hidden="true"
+        ></button>
+
+        <label for="title">Name:</label>
+        <input type="text" id="title" placeholder="Task" required />
+
+        <div>
+          <!-- <label for="checklist-input">Subtasks:</label> -->
+          <div class="checklist-cont"></div>
+          <input
+            type="text"
+            id="checklist-input"
+            placeholder="Press enter to add Subtask"
+          />
+        </div>
+
+        <label for="date">Due Date: </label>
+        <input type="date" id="date" />
+        <label for="priority">Priority:</label>
+        <select name="priority" id="priority">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+          <option value="none" selected>None</option>
+        </select>
+        <label for="project">Project:</label>
+        <select name="project" class="project-select" id="project">
+          <!-- even selected would need to be updated every round -->
+          <!-- set this up using js including inbox to use index in value-->
+        </select>
+
+        <label for="notes">Notes:</label>
+        <textarea
+          type="text"
+          id="notes"
+          placeholder="Enter additional information"
+        ></textarea>
+
+        <input type="submit" formmethod="dialog" value="Submit" />
+        <input type="reset" class="close-but" value="Close" />
+      </form>
+    </dialog>
+  </body>
+</html>
