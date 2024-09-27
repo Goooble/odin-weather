@@ -24,8 +24,9 @@ searchBut.addEventListener("click", () => {
   requestDataHandler();
 });
 
-function requestDataHandler() {
-  requestData(searchValue, unit)
+async function requestDataHandler() {
+  loading();
+  await requestData(searchValue, unit)
     .then(sortData)
     .then((data) => console.log(data))
     .catch((error) => {
@@ -33,4 +34,9 @@ function requestDataHandler() {
         console.log(`${error.cause.message}: Displayed`);
       }
     });
+  loading();
+}
+
+function loading() {
+  searchBox.classList.toggle("loading");
 }
