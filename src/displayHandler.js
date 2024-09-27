@@ -1,0 +1,5 @@
+/*
+    this will contain all the display functionalities
+    another module that sends a request and parses it and returns the data
+    
+*/

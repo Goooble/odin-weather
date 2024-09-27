@@ -1,28 +1,52 @@
-# restaurant-odin
+# weather
 
-#notes
-updateviewbox function is great coz it updates the entire screent based on any change no matter where the change was done
+## TODO:
 
-use class names to access dom so that even if you move around the design later you dont have to change much code in the domhandler
+You should be able to search for a specific location and toggle displaying the data in Fahrenheit or Celsius.
 
-start with really basic design to get the scripts to actually work
+You should change the look of the page based on the data, maybe by changing the color of the background or by adding images that describe the weather.
 
-date() constructor returns an object yes but it has implicit object to string toString() that converts it
+add a ‘loading’ component that displays from the time the form is submitted until the information comes back from the API. Use DevTools to test for low-end devices.
 
-when passing arrays to domHandler like this with references inside, make sure you duplicate the array to not change the original array
+## data
 
-to toglge bool: bool = !bool
+### current condion
 
-duplicating array: .slice(0) but this creates shallow copies but i wanted deep copies lmao
+- resolved address
 
-decisions should be made from the most intrinsic values and not extrinsic ones, like displaying checked todos must be done from checking the state of the todo itself, not moving these todos in an array when they are checked
+- conditions
 
-`<button type="submit" disabled style="display: none" aria-hidden="true"></button>`
-to disable form submit on enter https://stackoverflow.com/a/51507806
+- feelslike
 
-you could have the event listeners in index but make them call specific function not even as a callback 
-`addeventlistener("click", (e) => {functioncall();})`
+- humidity
 
-use class selectors, easier to edit and understand in css please
+- icon
 
-new date("string") without time generates date with time set as 05:30 in this timezone
+- precipprob
+
+- temp
+
+### days
+
+carousal
+
+- date-time
+- feelslike
+- precipprob
+- icon
+- humidity
+- temp
+- temp max
+- temp min
+- description
+
+### hours
+
+for day 1 only
+
+- conditions
+- datetime
+- feelslike
+- humidity
+- precipprob
+- temp
