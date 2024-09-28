@@ -1,6 +1,7 @@
 import "./reset.css";
 import "./styles.css";
 import { requestData, sortData } from "./APIHandler";
+import display from "./displayHandler";
 const searchBox = document.querySelector("input");
 const searchBut = document.querySelector(".search-but");
 const flipUnit = document.querySelector(".flip-unit");
@@ -28,7 +29,7 @@ async function requestDataHandler() {
   loading();
   await requestData(searchValue, unit)
     .then(sortData)
-    .then((data) => console.log(data))
+    .then((data) => display(data))
     .catch((error) => {
       if (error.cause.message === "Not found") {
         console.log(`${error.cause.message}: Displayed`);

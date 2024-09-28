@@ -33,29 +33,16 @@ function sortData(data) {
   };
 
   let day = [];
-  data.days.forEach((item, index) => {
+  data.days.forEach((item) => {
     day.push({
-      hours: [],
       date: item.datetime,
-      description: item.description,
       icon: item.icon,
-      condition: item.conditions,
       temp: item.temp,
       tempMax: item.tempmax,
       tempMin: item.tempmin,
       humidity: item.humidity,
       feelsLike: item.feelslike,
       precipProb: item.precipprob,
-    });
-    item.hours.forEach((hour) => {
-      day[index].hours.push({
-        time: hour.datetime,
-        condition: hour.conditions,
-        feelsLike: hour.feelslike,
-        humidity: hour.humidity,
-        precipProb: hour.precipprob,
-        temp: hour.temp,
-      });
     });
   });
 
