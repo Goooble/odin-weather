@@ -29,7 +29,7 @@ async function requestDataHandler() {
   loading();
   await requestData(searchValue, unit)
     .then(sortData)
-    .then((data) => display(data))
+    .then((data) => display(data, unit))
     .catch((error) => {
       if (error.cause.message === "Not found") {
         console.log(`${error.cause.message}: Displayed`);

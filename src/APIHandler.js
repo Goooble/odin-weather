@@ -40,9 +40,6 @@ function sortData(data) {
       temp: item.temp,
       tempMax: item.tempmax,
       tempMin: item.tempmin,
-      humidity: item.humidity,
-      feelsLike: item.feelslike,
-      precipProb: item.precipprob,
     });
   });
 
