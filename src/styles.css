@@ -25,12 +25,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  width: min-content;
 }
 
-/* .search-box {
-  display: grid;
-  grid-auto-flow: row;
-} */
+.search-bar {
+  display: flex;
+  gap: 20px;
+}
 
 .search-box {
   border-radius: 10px;
@@ -38,6 +39,7 @@ body {
   background-color: #000;
   color: white;
   padding: 10px;
+  flex-grow: 1;
 }
 
 .search-box:focus {
@@ -208,4 +210,20 @@ body {
 
 .temp-cont :nth-child(2) {
   font-weight: bold;
+}
+
+.dialog {
+  display: none;
+}
+
+.content-body .dialog-show {
+  display: block;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 0, 0, 0.8),
+    rgb(0, 0, 0, 0)
+  );
 }
