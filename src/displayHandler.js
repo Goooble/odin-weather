@@ -1,6 +1,5 @@
 let unitValue;
 function display(data, unit, iconSet) {
-  console.log(data);
   if (unit === "metric") {
     unitValue = "°C";
   } else {

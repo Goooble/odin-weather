@@ -17,7 +17,8 @@ const searchBox = document.querySelector("input");
 const searchBut = document.querySelector(".search-but");
 const flipUnit = document.querySelector(".flip-unit");
 
-let searchValue;
+let searchValue = "london";
+
 let unit = "metric";
 
 let iconSet = {
@@ -62,3 +63,4 @@ async function requestDataHandler() {
     });
   loadTop();
 }
+requestDataHandler();
