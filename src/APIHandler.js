@@ -7,16 +7,18 @@ async function requestData(city, unit) {
       },
     );
     if (response.status === 400) {
-      throw new Error("Not found");
+      throw new Error("City Not Found");
     }
     if (!response.ok) {
-      throw new Error("Some Random error");
+      throw new Error("There has been an error, please try again later");
       //mdn told me to do this idk
     }
     let data = await response.json();
     return data;
   } catch (err) {
-    throw new Error("error", { cause: err });
+    throw new Error("There has been an error, Please try again later", {
+      cause: err,
+    });
   }
 }
 

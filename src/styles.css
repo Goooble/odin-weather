@@ -218,12 +218,12 @@ body {
 
 .content-body .dialog-show {
   display: block;
-  color: white;
+  color: black;
   padding: 20px;
   border-radius: 10px;
   background-image: linear-gradient(
     to right,
-    rgb(0, 0, 0, 0.8),
+    rgb(255, 255, 255, 0.8),
     rgb(0, 0, 0, 0)
   );
 }

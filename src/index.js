@@ -54,8 +54,10 @@ async function requestDataHandler() {
     .then(sortData)
     .then((data) => display(data, unit, iconSet))
     .catch((error) => {
-      if (error.cause.message === "Not found") {
+      if (error.cause.message === "City Not Found") {
         errorDisplay(error.cause.message);
+      } else {
+        errorDisplay(error.message);
       }
     });
   loadTop();
