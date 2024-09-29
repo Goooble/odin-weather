@@ -1,5 +1,5 @@
 let unitValue;
-export default function display(data, unit) {
+function display(data, unit) {
   console.log(data);
   if (unit === "metric") {
     unitValue = "°C";
@@ -13,7 +13,7 @@ const cityName = document.querySelector(".city-name");
 const address = document.querySelector(".extra-address");
 const time = document.querySelector(".time");
 const condition = document.querySelector(".curr-cond");
-const icon = document.querySelector(".curr-icon");
+const iconIMG = document.querySelector(".curr-icon>img");
 const currTemp = document.querySelector(".curr-temp");
 const humid = document.querySelector(".humid-value");
 const feels = document.querySelector(".feels-value");
@@ -31,12 +31,13 @@ function current(data) {
   humid.textContent = data.currCont.humidity;
   feels.textContent = data.currCont.feelsLike;
   precip.textContent = data.currCont.precipProb;
+
   let dayArray = document.querySelectorAll(".days");
   dayArray.forEach((item) => item.remove());
   data.day.forEach((item) => {
     let days = document.createElement("div");
     days.className = "days";
-    days.innerHTML = `<img src="./assets/clear-day(1).svg" alt="" />
+    days.innerHTML = `<img src="" alt="" />
             <p class="date">${item.date}</p>
             <p class="temp-name">Temperature ${unitValue}</p>
             <div class="temp-cont">
@@ -44,7 +45,16 @@ function current(data) {
               <p>${item.temp}</p>
               <p>${item.tempMin}</p>
             </div>`;
-    console.log(dayCont);
     dayCont.appendChild(days);
+    // let icon = days.querySelector("img");
+    // icon.src = clearDay;
   });
 }
+
+function loadDown() {
+  dayCont.scrollTop = dayCont.scrollHeight;
+}
+function loadTop() {
+  dayCont.scrollTop = 0;
+}
+export { display, loadDown, loadTop };

@@ -6,9 +6,7 @@ body {
   padding: 50px;
   height: 100vh;
   width: 100vw;
-  background: url("./assets/snow.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #1e1e24;
   font-family:
     system-ui,
     -apple-system,
@@ -26,7 +24,7 @@ body {
 .content-body {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 25px;
 }
 
 /* .search-box {
@@ -44,7 +42,7 @@ body {
 
 .search-box:focus {
   outline: none;
-  border-bottom: 2px inset white;
+  box-shadow: 0px 2px white;
 }
 
 .search-box::placeholder {
@@ -58,7 +56,6 @@ body {
   background-color: #000;
   color: white;
   border: none;
-  border-bottom: 2px solid white;
 }
 
 .search-but:active,
@@ -80,51 +77,57 @@ body {
     rgb(0, 0, 0, 0)
   );
   font-size: 1.2rem;
-  width: 800px;
+  width: min-content;
   display: grid;
-  grid-template-columns: min-content 250px;
-  grid-template-rows: min-content 50px 125px 100px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 410px;
+}
+
+.curr-info {
+  text-wrap: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-info > div {
+  display: flex;
+  flex-direction: column;
 }
 
 .address {
-  grid-column: 1/3;
-  margin-top: -20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  font-weight: bold;
 }
 
 .city-name {
   font-size: 3rem;
+  margin-top: -20px;
+  margin-bottom: -10px;
 }
 
 .extra-address {
-  margin-top: -20px;
   font-size: 1.5rem;
 }
 
-.time,
-.curr-cond {
-  height: min-content;
-  border-bottom: 1px solid white;
+.time-cond {
+  display: flex;
+  flex-direction: column;
 }
 
-.curr-icon {
+.curr-icon > img {
   width: 125px;
   height: 125px;
-  grid-column: 1/2;
-}
-
-.curr-cond {
-  grid-column: 2/3;
-  padding-left: 20px;
-  width: 200px;
 }
 
 .curr-temp {
   font-size: 4rem;
-  padding-left: 20px;
-  margin-top: 10px;
+}
+.icon-temp {
+  display: flex;
+  gap: 30px;
+  padding: 20px 0px;
+  justify-content: center;
 }
 
 .curr-temp > span {
@@ -133,7 +136,7 @@ body {
 }
 
 .extra-info {
-  font-size: 0.8rem;
+  font-size: 1rem;
   grid-column: 1/3;
   display: flex;
   gap: 30px;
@@ -149,16 +152,18 @@ body {
 }
 
 .days-cont {
-  grid-column: 3/4;
-  grid-row: 1/-1;
+  grid-column: 2/3;
+  grid-row: 1;
   width: min-content;
   padding-left: 20px;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  height: 400px;
+  height: 100%;
   overflow-y: scroll;
   padding-right: 20px;
+  border-radius: 10px;
+  scroll-behavior: smooth;
 }
 .days-cont::-webkit-scrollbar {
   background-color: rgb(0, 0, 0, 0.5);

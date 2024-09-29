@@ -1,7 +1,7 @@
 import "./reset.css";
 import "./styles.css";
 import { requestData, sortData } from "./APIHandler";
-import display from "./displayHandler";
+import { display, loadDown, loadTop } from "./displayHandler";
 const searchBox = document.querySelector("input");
 const searchBut = document.querySelector(".search-but");
 const flipUnit = document.querySelector(".flip-unit");
@@ -26,7 +26,7 @@ searchBut.addEventListener("click", () => {
 });
 
 async function requestDataHandler() {
-  loading();
+  loadDown();
   await requestData(searchValue, unit)
     .then(sortData)
     .then((data) => display(data, unit))
@@ -35,9 +35,5 @@ async function requestDataHandler() {
         console.log(`${error.cause.message}: Displayed`);
       }
     });
-  loading();
-}
-
-function loading() {
-  searchBox.classList.toggle("loading");
+  loadTop();
 }
